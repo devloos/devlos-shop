@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <h1 class="text-9xl font-bold underline">Hello world!</h1>
-  </div>
+  <UApp>
+    <NuxtPage />
+  </UApp>
 </template>
