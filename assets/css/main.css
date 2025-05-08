@@ -1,7 +1,25 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/inter.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/inter-italic.ttf') format('ttf');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
+  font-family: 'inter';
+
   --color-base-100: oklch(96% 0.003 264.542);
   --color-base-200: oklch(87% 0.01 258.338);
   --color-base-300: oklch(55% 0.027 264.364);
