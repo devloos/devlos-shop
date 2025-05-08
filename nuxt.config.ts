@@ -18,4 +18,8 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  typescript: {
+    strict: true,
+    typeCheck: true,
+  },
 });

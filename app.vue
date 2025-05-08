@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 if (import.meta.server) {
   useSeoMeta({
     title: "Devlos Shop",
