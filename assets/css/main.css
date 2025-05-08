@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'inter';
-  src: url('/fonts/inter.ttf') format('ttf');
+  src: url('/fonts/inter.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: 'inter';
-  src: url('/fonts/inter-italic.ttf') format('ttf');
+  src: url('/fonts/inter-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
