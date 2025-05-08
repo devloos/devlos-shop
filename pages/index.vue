@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import type { BreadcrumbItem } from "@nuxt/ui";
+import type { BreadcrumbItem } from '@nuxt/ui';
 
 const page = ref(5);
 const items1 = ref([
-  "primary",
-  "secondary",
-  "success",
-  "info",
-  "warning",
-  "error",
-  "neutral",
+  'primary',
+  'secondary',
+  'success',
+  'info',
+  'warning',
+  'error',
+  'neutral',
 ]);
 
 const items2 = ref<BreadcrumbItem[]>([
   {
-    label: "Home",
-    icon: "i-lucide-house",
+    label: 'Home',
+    icon: 'i-lucide-house',
   },
   {
-    label: "Components",
-    icon: "i-lucide-box",
-    to: "/components",
+    label: 'Components',
+    icon: 'i-lucide-box',
+    to: '/components',
   },
   {
-    label: "Breadcrumb",
-    icon: "i-lucide-link",
-    to: "/components/breadcrumb",
+    label: 'Breadcrumb',
+    icon: 'i-lucide-link',
+    to: '/components/breadcrumb',
   },
 ]);
 
 const color = ref<
-  "primary" | "secondary" | "success" | "info" | "warning" | "error" | "neutral"
->("primary");
+  'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral'
+>('primary');
 </script>
 
 <template>
