@@ -20,22 +20,25 @@ const items2 = ref<BreadcrumbItem[]>([
   {
     label: 'Components',
     icon: 'i-lucide-box',
-    to: '/components',
+    to: '/',
   },
   {
     label: 'Breadcrumb',
     icon: 'i-lucide-link',
-    to: '/components/breadcrumb',
+    to: '/',
   },
 ]);
 
 const color = ref<
   'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral'
 >('primary');
+
+const { x, y } = useWindowScroll();
 </script>
 
 <template>
   <div class="p-10">
+    {{ x }}, {{ y }}
     <Icon class="me-3 text-2xl" name="svgs:logo" style="color: white" />
     <ThemeButton />
     <AppAlert>This is an auto-imported component</AppAlert>
