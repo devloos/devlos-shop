@@ -6,13 +6,13 @@ useSeoMeta({
   description: 'Shop unique and interesting tech at Devlos Shop',
   ogTitle: 'Devlos Shop',
   ogDescription: 'Shop unique and interesting tech at Devlos Shop',
-  ogImage: '/assets/logo-512.png',
+  ogImage: '/assets/logo-1280.png',
   ogType: 'website',
   ogUrl: runtimeConfig.public.host,
   ogLocale: 'en_US',
   twitterTitle: 'Devlos Shop',
   twitterDescription: 'Shop unique and interesting tech at Devlos Shop',
-  twitterImage: '/assets/logo-512.png',
+  twitterImage: '/assets/logo-1280.png',
   twitterCard: 'summary',
 });
 
@@ -23,7 +23,7 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'canonical', href: runtimeConfig.public.host },
-    { rel: 'apple-touch-icon', href: '/assets/logo-512.png' },
+    { rel: 'apple-touch-icon', href: '/assets/logo-1280.png' },
   ],
 });
 </script>

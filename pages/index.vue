@@ -39,7 +39,7 @@ const { x, y } = useWindowScroll();
 <template>
   <div class="p-10">
     {{ x }}, {{ y }}
-    <Icon class="me-3 text-2xl" name="svgs:logo" style="color: white" />
+    <Icon class="me-3 text-7xl" name="svgs:logo" />
     <ThemeButton />
     <AppAlert>This is an auto-imported component</AppAlert>
     <div
