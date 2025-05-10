@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
-  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/icon'],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/icon', '@nuxt/image'],
   icon: {
     customCollections: [
       {
@@ -19,6 +19,12 @@ export default defineNuxtConfig({
         dir: './assets/svgs',
       },
     ],
+  },
+  image: {
+    provider: 'imagekit',
+    imagekit: {
+      baseURL: 'https://ik.imagekit.io/tplos',
+    },
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },

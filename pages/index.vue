@@ -58,5 +58,6 @@ const color = ref<
       <UBreadcrumb :items="items2" :color="color" />
     </div>
     <AppTable :color="color" />
+    <NuxtImg src="/devlos-shop/luffy-0.png" alt="image" width="1800" placeholder />
   </div>
 </template>
