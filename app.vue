@@ -1,17 +1,24 @@
 <script setup lang="ts">
-if (import.meta.server) {
-  useSeoMeta({
-    title: 'Devlos Shop',
-    ogTitle: 'Devlos Shop',
-    description: 'Shop unique and interesting tech at Devlos Shop',
-    ogDescription: 'Shop unique and interesting tech at Devlos Shop',
-    ogImage: '/logo.png',
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
-    twitterTitle: 'Devlos Shop',
-    twitterDescription: 'Shop unique and interesting tech at Devlos Shop',
-  });
-}
+useSeoMeta({
+  title: 'Devlos Shop',
+  description: 'Shop unique and interesting tech at Devlos Shop',
+  ogTitle: 'Devlos Shop',
+  ogDescription: 'Shop unique and interesting tech at Devlos Shop',
+  ogImage: '/assets/logo.png',
+  ogType: 'website',
+  ogUrl: 'https://devlos-shop.vercel.app',
+  twitterTitle: 'Devlos Shop',
+  twitterDescription: 'Shop unique and interesting tech at Devlos Shop',
+  twitterImage: '/assets/logo.png',
+  twitterCard: 'summary',
+});
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+});
 </script>
 
 <template>
