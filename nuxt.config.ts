@@ -2,13 +2,22 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/eslint',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@vueuse/nuxt',
-  ],
+  compatibilityDate: '2024-11-01',
+  runtimeConfig: {
+    public: {
+      host: 'https://devlos-shop.vercel.app',
+    },
+  },
+  devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  typescript: {
+    strict: true,
+    typeCheck: true,
+  },
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/icon', '@nuxt/image', '@vueuse/nuxt'],
   icon: {
     customCollections: [
       {
@@ -22,15 +31,5 @@ export default defineNuxtConfig({
     imagekit: {
       baseURL: 'https://ik.imagekit.io/tplos',
     },
-  },
-  compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  typescript: {
-    strict: true,
-    typeCheck: true,
   },
 });
