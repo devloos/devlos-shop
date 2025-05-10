@@ -36,6 +36,7 @@ const color = ref<
 
 <template>
   <div class="p-10">
+    <Icon class="me-3 text-2xl" name="svgs:logo" style="color: white" />
     <ThemeButton />
     <AppAlert>This is an auto-imported component</AppAlert>
     <div
