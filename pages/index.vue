@@ -34,6 +34,16 @@ const color = ref<
 >('primary');
 
 const { x, y } = useWindowScroll();
+
+const supabase = useSupabaseClient();
+const { data } = await supabase.from('ping').select().limit(1);
+
+const message = ref(data?.[0]?.message || 'oops error');
+
+onMounted(() => {
+  // Code here runs after the component is mounted
+  console.log('Component is mounted!');
+});
 </script>
 
 <template>
@@ -41,7 +51,7 @@ const { x, y } = useWindowScroll();
     {{ x }}, {{ y }}
     <Icon class="me-3 text-7xl" name="svgs:logo" />
     <ThemeButton />
-    <AppAlert>This is an auto-imported component</AppAlert>
+    <AppAlert>{{ message }}</AppAlert>
     <div
       class="grid grid-cols-4 gap-4 justify-center items-center justify-items-center p-8 border mb-5"
     >

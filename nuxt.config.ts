@@ -17,7 +17,23 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
-  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/icon', '@nuxt/image', '@vueuse/nuxt'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/eslint',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@vueuse/nuxt',
+    '@nuxtjs/supabase',
+  ],
+  supabase: {
+    redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      include: ['/account(/*)?'],
+      exclude: [],
+      saveRedirectToCookie: true,
+    },
+  },
   icon: {
     customCollections: [
       {
