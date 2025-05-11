@@ -8,7 +8,7 @@ useSeoMeta({
   ogDescription: 'Shop unique and interesting tech at Devlos Shop',
   ogImage: '/assets/logo-1280.png',
   ogType: 'website',
-  ogUrl: runtimeConfig.public.host,
+  ogUrl: runtimeConfig.public.baseUrl,
   ogLocale: 'en_US',
   twitterTitle: 'Devlos Shop',
   twitterDescription: 'Shop unique and interesting tech at Devlos Shop',
@@ -22,7 +22,7 @@ useHead({
   },
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'canonical', href: runtimeConfig.public.host },
+    { rel: 'canonical', href: runtimeConfig.public.baseUrl },
     { rel: 'apple-touch-icon', href: '/assets/logo-1280.png' },
   ],
 });

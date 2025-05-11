@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   runtimeConfig: {
     public: {
-      host: 'https://devlos-shop.vercel.app',
+      baseUrl: process.env.BASE_URL,
     },
   },
   devtools: { enabled: true },

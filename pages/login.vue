@@ -6,6 +6,8 @@ definePageMeta({
   middleware: 'redirect-authenticated',
 });
 
+const runtimeConfig = useRuntimeConfig();
+
 const schema = z.object({
   email: z.string().email('Invalid email'),
   password: z.string().min(8, 'Must be at least 8 characters'),
@@ -26,15 +28,25 @@ const signInWithPassword = async () => {
     password: state.password || '',
   });
 
-  if (error) console.log(error);
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  navigateTo('/confirm');
 };
 
 async function signInProvider(provider: Provider) {
-  const { data } = await supabase.auth.signInWithOAuth({
+  const { error } = await supabase.auth.signInWithOAuth({
     provider,
+    options: {
+      redirectTo: `${runtimeConfig.public.baseUrl}/confirm`,
+    },
   });
 
-  console.log(data);
+  if (error) {
+    console.log(error);
+  }
 }
 </script>
 <template>

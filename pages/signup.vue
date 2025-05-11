@@ -20,12 +20,17 @@ const state = reactive<Partial<Schema>>({
 const supabase = useSupabaseClient();
 
 async function onSubmit() {
-  const { data } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email: state.email || '',
     password: state.password || '',
   });
 
-  console.log(data);
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  navigateTo('/confirm');
 }
 </script>
 
