@@ -44,14 +44,30 @@ onMounted(() => {
   // Code here runs after the component is mounted
   console.log('Component is mounted!');
 });
+
+const toast = useToast();
+
+async function logOut() {
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    toast.add({ description: error.message, color: 'error' });
+    return;
+  }
+
+  navigateTo('/');
+}
 </script>
 
 <template>
   <div class="p-10">
-    {{ x }}, {{ y }}
-    <Icon class="me-3 text-7xl" name="svgs:logo" />
-    <ThemeButton />
-    <AppAlert>{{ message }}</AppAlert>
+    <div class="flex justify-between">
+      <span>{{ x }}, {{ y }}</span>
+      <Icon class="me-3 text-7xl" name="svgs:logo" />
+      <ThemeButton />
+      <AppAlert>{{ message }}</AppAlert>
+      <UButton @click="logOut">Log Out</UButton>
+    </div>
     <div
       class="grid grid-cols-4 gap-4 justify-center items-center justify-items-center p-8 border mb-5"
     >
