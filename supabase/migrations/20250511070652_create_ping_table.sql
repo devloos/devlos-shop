@@ -25,6 +25,4 @@ ALTER TABLE ONLY "public"."ping"
 
 CREATE POLICY "Enable read access for all users" ON "public"."ping" FOR SELECT USING (true);
 
-
-
 ALTER TABLE "public"."ping" ENABLE ROW LEVEL SECURITY;

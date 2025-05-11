@@ -1,2 +1,4 @@
-INSERT INTO ping (message)
-VALUES ('Pong!');
+INSERT INTO
+  public.ping (message)
+VALUES
+  ('Pong!');
