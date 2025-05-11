@@ -33,8 +33,6 @@ const color = ref<
   'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral'
 >('primary');
 
-const { x, y } = useWindowScroll();
-
 const supabase = useSupabaseClient();
 const { data } = await supabase.from('ping').select().limit(1);
 
@@ -47,7 +45,14 @@ onMounted(() => {
 
 const toast = useToast();
 
-async function logOut() {
+const user = useSupabaseUser();
+
+async function handleAuth() {
+  if (!user.value) {
+    navigateTo('/login');
+    return;
+  }
+
   const { error } = await supabase.auth.signOut();
 
   if (error) {
@@ -61,12 +66,18 @@ async function logOut() {
 
 <template>
   <div class="p-10">
-    <div class="flex justify-between">
-      <span>{{ x }}, {{ y }}</span>
+    <div class="flex justify-between items-center">
       <Icon class="me-3 text-7xl" name="svgs:logo" />
       <ThemeButton />
       <AppAlert>{{ message }}</AppAlert>
-      <UButton @click="logOut">Log Out</UButton>
+      <ClientOnly>
+        <div class="flex gap-3 items-center">
+          <NuxtLink v-if="!user" to="/signup">Sign Up</NuxtLink>
+          <UButton type="button" @click.prevent="handleAuth">
+            {{ user ? 'Log Out' : 'Login' }}
+          </UButton>
+        </div>
+      </ClientOnly>
     </div>
     <div
       class="grid grid-cols-4 gap-4 justify-center items-center justify-items-center p-8 border mb-5"

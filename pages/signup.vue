@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import * as z from 'zod';
-import type { Provider } from '@supabase/auth-js';
+
+definePageMeta({
+  middleware: 'redirect-authenticated',
+});
 
 const schema = z.object({
   email: z.string().email('Invalid email'),
@@ -24,18 +27,16 @@ async function onSubmit() {
 
   console.log(data);
 }
-
-async function signInProvider(provider: Provider) {
-  const { data } = await supabase.auth.signInWithOAuth({
-    provider,
-  });
-
-  console.log(data);
-}
 </script>
 
 <template>
-  <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+  <UForm
+    :schema="schema"
+    :state="state"
+    class="flex flex-col items-center h-svh justify-center gap-y-4"
+    :validate-on="['change']"
+    @submit="onSubmit"
+  >
     <UFormField label="Email" name="email">
       <UInput v-model="state.email" />
     </UFormField>
@@ -44,14 +45,6 @@ async function signInProvider(provider: Provider) {
       <UInput v-model="state.password" type="password" />
     </UFormField>
 
-    <div class="flex flex-col gap-2">
-      <UButton type="submit">Submit</UButton>
-      <UButton type="button" @click="signInProvider('google')">
-        Sign In With Google
-      </UButton>
-      <UButton type="button" @click="signInProvider('discord')">
-        Sign In With Discord
-      </UButton>
-    </div>
+    <UButton type="submit">Submit</UButton>
   </UForm>
 </template>
