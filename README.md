@@ -127,3 +127,69 @@ supabase db diff -f <migration_name>
 ```
 
 - Create migration based on current schema diff
+
+## Supabase Auth
+
+We support three authentication methods:
+
+- **Email**
+- **Google OAuth**
+- **Discord OAuth**
+
+### Email Auth Flow
+
+- Users signing in or signing up via email are redirected back to the originally requested page (i.e., the route that required authentication).
+- Supabase handles magic link verification via email.
+
+### OAuth Flow (Google, Discord)
+
+- When using an OAuth provider:
+  1. The user is first redirected to `/confirm`.
+  2. After session confirmation, they are redirected to the originally intended route.
+  3. Supabase automatically handles OAuth redirects via configured **Redirect URLs**.
+
+### Middleware Behavior
+
+- A route middleware is set up to **redirect authenticated users away from `/login` and `/signup`** to the home page (`/`).
+- This prevents signed-in users from accessing auth routes unnecessarily.
+
+### Redirect URLs
+
+- Once OAuth is completed with the provider, the flow returns to Supabase.
+- Supabase then redirects the user to one of the configured URLs set under: **Supabase → Authentication → URL Configuration**
+
+## OAuth Setup Summary
+
+To enable an OAuth provider like Google or Discord in Supabase:
+
+1. **Register a new OAuth App** with the provider:
+
+- Google: [Google Developer Console](https://console.developers.google.com)
+- Discord: [Discord Developer Portal](https://discord.com/developers/applications)
+
+2. **Configure the Authorized Redirect URL**:
+
+- Supabase provides this URL for each environment.
+- Example: `https://<project_id>.supabase.co/auth/v1/callback`
+- Add this to the provider's app settings.
+
+3. **Obtain the Client ID and Secret** from the provider.
+
+4. **Configure the provider in Supabase**:
+
+- Go to: `Authentication → Sign In / Providers → Auth Providers`
+- Enable the desired provider and paste the client ID and secret.
+
+5. **Local Development**:
+
+- Add the client ID and secret to your `supabase/config.toml` file:
+
+  ```toml
+  [auth.external.google]
+  client_id = "<your-client-id>"
+  secret = "<your-client-secret>"
+
+  [auth.external.discord]
+  client_id = "<your-client-id>"
+  secret = "<your-client-secret>"
+  ```
