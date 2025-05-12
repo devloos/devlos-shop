@@ -8,7 +8,7 @@
   --color-content-300: oklch(30% 0 0);
 
   --color-primary-500: oklch(14% 0.005 285.823);
-  --color-secondary-500: oklch(41.703% 0.099 251.473);
+  --color-secondary-500: oklch(57.4% 0.0853 221deg);
   --color-accent-500: oklch(67.271% 0.167 35.791);
 
   /* TODO: nuxt is defaulting to white, instead of neutral */
@@ -31,7 +31,7 @@
   --color-content-300: oklch(55% 0.027 264.364);
 
   --color-primary-500: oklch(92% 0.006 264.531);
-  --color-secondary-500: oklch(41.703% 0.099 251.473);
+  --color-secondary-500: oklch(57.4% 0.0853 221deg);
   --color-accent-500: oklch(67.271% 0.167 35.791);
 
   /* TODO: nuxt is defaulting to white, instead of neutral */
@@ -64,6 +64,7 @@
   --ui-text-toned: var(--color-content-100);
   --ui-text: var(--color-content-100);
   --ui-text-highlighted: var(--color-content-100);
+  --ui-text-inverted: light-dark(white, black);
 
   /* Borders and Rings */
   --ui-border: var(--color-content-100);
