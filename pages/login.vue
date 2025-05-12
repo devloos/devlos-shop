@@ -22,7 +22,7 @@ const state = reactive<Partial<Schema>>({
 
 const supabase = useSupabaseClient();
 
-const signInWithPassword = async () => {
+async function signInWithPassword() {
   const { error } = await supabase.auth.signInWithPassword({
     email: state.email || '',
     password: state.password || '',
@@ -34,7 +34,7 @@ const signInWithPassword = async () => {
   }
 
   navigateTo('/confirm');
-};
+}
 
 async function signInProvider(provider: Provider) {
   const { error } = await supabase.auth.signInWithOAuth({

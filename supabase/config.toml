@@ -33,7 +33,7 @@ major_version = 15
 [db.migrations]
 # Specifies an ordered list of schema files that describe your database.
 # Supports glob patterns relative to supabase directory: "./schemas/*.sql"
-schema_paths = []
+schema_paths = ['./schemas/ping.sql']
 
 [db.seed]
 # If enabled, seeds the database after migrations during a db reset.
