@@ -1,8 +1,7 @@
 CREATE TABLE
     IF NOT EXISTS "public"."ping" (
         "id" bigint NOT NULL,
-        "message" "text" DEFAULT 'Pong!' NOT NULL,
-        "rando" "text" DEFAULT 'Should Be Deleted' NOT NULL
+        "message" "text" DEFAULT 'Pong!' NOT NULL
     );
 
 ALTER TABLE "public"."ping" OWNER TO "postgres";

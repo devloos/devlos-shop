@@ -38,17 +38,14 @@ export type Database = {
         Row: {
           id: number
           message: string
-          rando: string
         }
         Insert: {
           id?: number
           message?: string
-          rando?: string
         }
         Update: {
           id?: number
           message?: string
-          rando?: string
         }
         Relationships: []
       }
