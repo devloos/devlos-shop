@@ -66,6 +66,8 @@ async function handleAuth() {
 
 <template>
   <div class="p-10">
+    <NuxtLink to="/privacy" class="underline mb-5 inline-block">Privacy Policy</NuxtLink>
+
     <div class="flex justify-between items-center">
       <Icon class="me-3 text-7xl" name="svgs:logo" />
       <ThemeButton />
