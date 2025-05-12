@@ -171,9 +171,3 @@ policy = "oneshot"
 inspector_port = 8083
 # The Deno major version to use.
 deno_version = 1
-
-[analytics]
-enabled = true
-port = 54327
-# Configure one of the supported backends: `postgres`, `bigquery`.
-backend = "postgres"
