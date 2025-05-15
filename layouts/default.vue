@@ -10,7 +10,7 @@ const user = useSupabaseUser();
       <div class="flex justify-between items-center">
         <NuxtLink
           to="/"
-          class="flex justify-start items-center gap-3 grow hover:scale-[1.015] transition-all"
+          class="flex justify-start items-center gap-3 grow hover:scale-[1.01] transition-all"
         >
           <Icon class="text-4xl" name="svgs:logo" />
           <p class="font-semibold text-lg">Devlos Shop</p>
