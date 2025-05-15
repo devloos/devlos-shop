@@ -10,7 +10,7 @@ const user = useSupabaseUser();
       <div class="flex justify-between items-center">
         <NuxtLink
           to="/"
-          class="flex justify-start items-center gap-3 grow hover:scale-[1.01] transition-all"
+          class="flex justify-start items-center gap-3 hover:scale-[1.01] transition-all"
         >
           <Icon class="text-4xl" name="svgs:logo" />
           <p class="font-semibold text-lg">Devlos Shop</p>
@@ -24,7 +24,7 @@ const user = useSupabaseUser();
           <NuxtLink to="privacy">FAQ</NuxtLink>
         </div>
 
-        <div class="flex justify-end gap-1 items-center grow">
+        <div class="flex justify-end gap-1 items-center">
           <UButton icon="svgs:search" color="neutral" variant="ghost" size="xl" />
           <ThemeSelector />
           <template v-if="user">
@@ -39,10 +39,18 @@ const user = useSupabaseUser();
                 variant="ghost"
                 size="xl"
               />
-              <NuxtLink to="/signup">Sign Up</NuxtLink>
-              <NuxtLink class="bg-primary text-base-100 rounded-md px-3 py-1" to="/login">
-                Login
-              </NuxtLink>
+
+              <div class="relative inline-flex group">
+                <div
+                  class="absolute opacity-90 inset-2.5 bg-primary rounded-2xl blur-lg group-hover:opacity-100 group-hover:inset-2 group-hover:duration-300 transition-all"
+                />
+                <NuxtLink
+                  class="bg-primary text-base-100 rounded-md px-3 py-1 z-10"
+                  to="/login"
+                >
+                  Login
+                </NuxtLink>
+              </div>
             </div>
           </template>
         </div>
