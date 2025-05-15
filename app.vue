@@ -30,6 +30,8 @@ useHead({
 
 <template>
   <UApp>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage class="py-[var(--navbar-height)]" />
+    </NuxtLayout>
   </UApp>
 </template>

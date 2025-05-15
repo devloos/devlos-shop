@@ -25,6 +25,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/supabase',
   ],
+  colorMode: {
+    fallback: 'dark',
+  },
   supabase: {
     redirectOptions: {
       login: '/login',

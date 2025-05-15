@@ -1,3 +1,5 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --color-base-100: oklch(96% 0.003 264.542);
   --color-base-200: oklch(87% 0.01 258.338);
@@ -43,6 +45,23 @@
   --color-error-500: oklch(51.61% 0.146 29.674);
 }
 
+@theme {
+  --color-primary-500: var(--color-primary-500);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-accent-500: var(--color-secondary-500);
+
+  --color-base-100: var(--color-base-100);
+  --color-base-200: var(--color-base-200);
+  --color-base-300: var(--color-base-300);
+
+  --color-content-100: var(--color-content-100);
+  --color-content-200: var(--color-content-200);
+  --color-content-300: var(--color-content-300);
+
+  --color-light: oklch(87% 0.01 258.338);
+  --color-dark: oklch(15% 0 0);
+}
+
 :root {
   --ui-primary: var(--color-primary-500);
   --ui-secondary: var(--color-secondary-500);
@@ -85,6 +104,6 @@
   --ui-outline-accented: var(--color-content-300);
 
   /* Radius and Border */
-  --ui-radius: 0.1rem;
+  --ui-radius: 0.25rem;
   --ui-border-size: 1px;
 }
