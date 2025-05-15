@@ -5,7 +5,7 @@ const user = useSupabaseUser();
 <template>
   <div>
     <header
-      class="border-content-300/25 dark:border-content-300/50 border bg-linear-to-t from-dark/5 dark:from-dark/10 from-25% dark:from-50% to-light/30 dark:to-light/5 fixed top-0 left-0 right-0 max-w-8/12 mx-auto z-10 my-4 backdrop-blur-sm p-5 rounded-lg"
+      class="border-content-300/25 dark:border-content-300/50 border bg-linear-to-t from-dark/5 dark:from-dark/10 from-25% dark:from-50% to-light/30 dark:to-light/5 fixed top-0 left-0 right-0 max-w-8/12 mx-auto z-10 my-4 backdrop-blur-sm py-4 px-6 rounded-lg"
     >
       <div class="flex justify-between items-center">
         <NuxtLink

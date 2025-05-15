@@ -47,7 +47,7 @@ onMounted(() => {
       <UAlert
         title="Heads up!"
         description="You can change the primary color in your app config."
-        icon="i-lucide-terminal"
+        icon="svgs:moon"
         :color="color"
       />
       <UButton :color="color">Button</UButton>
