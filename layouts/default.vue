@@ -17,18 +17,34 @@ const user = useSupabaseUser();
         </NuxtLink>
 
         <div class="flex justify-center gap-10">
-          <NuxtLink to="privacy">Shop</NuxtLink>
-          <NuxtLink to="privacy">Contact</NuxtLink>
-          <NuxtLink to="privacy">Changelog</NuxtLink>
-          <NuxtLink to="privacy">Privacy</NuxtLink>
-          <NuxtLink to="privacy">FAQ</NuxtLink>
+          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
+            Shop
+          </NuxtLink>
+          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
+            Contact
+          </NuxtLink>
+          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
+            Changelog
+          </NuxtLink>
+          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
+            Privacy
+          </NuxtLink>
+          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
+            FAQ
+          </NuxtLink>
         </div>
 
         <div class="flex justify-end gap-1 items-center">
           <UButton icon="svgs:search" color="neutral" variant="ghost" size="xl" />
           <ThemeSelector />
           <template v-if="user">
-            <UButton icon="svgs:profile" color="neutral" variant="ghost" size="xl" />
+            <UButton
+              icon="svgs:profile"
+              color="neutral"
+              variant="ghost"
+              size="xl"
+              @click="navigateTo('/account')"
+            />
             <UButton icon="svgs:shopping-bag" color="neutral" variant="ghost" size="xl" />
           </template>
           <template v-else>
