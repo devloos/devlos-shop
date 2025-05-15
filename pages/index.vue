@@ -53,7 +53,7 @@ async function handleAuth() {
     return;
   }
 
-  const { error } = await supabase.auth.signOut();
+  const { error } = await supabase.auth.signOut({ scope: 'local' });
 
   if (error) {
     toast.add({ description: error.message, color: 'error' });
