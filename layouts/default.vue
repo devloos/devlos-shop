@@ -1,4 +1,6 @@
 <script setup>
+const { greaterOrEqual } = useBreakpoints();
+
 const user = useSupabaseUser();
 
 const isSearching = ref(false);
@@ -42,7 +44,10 @@ function closeNav() {
             class="inline-flex justify-start items-center gap-3 hover:scale-[1.01] transition-all"
           >
             <Icon class="text-4xl" name="svgs:logo" />
-            <p v-if="!isSearching" class="md:hidden xl:block font-semibold text-lg">
+            <p
+              v-if="greaterOrEqual('xl') || !isSearching"
+              class="md:hidden xl:block font-semibold text-lg"
+            >
               Devlos Shop
             </p>
           </NuxtLink>
