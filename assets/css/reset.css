@@ -43,3 +43,7 @@ a:not([class]) {
     scroll-behavior: auto !important;
   }
 }
+
+:root {
+  interpolate-size: allow-keywords;
+}
