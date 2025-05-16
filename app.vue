@@ -32,7 +32,7 @@ useHead({
   <UApp>
     <NuxtLayout>
       <NuxtPage
-        class="py-[var(--navbar-height)]"
+        class="py-[var(--header-height)]"
         :transition="{
           name: 'slide-up',
           mode: 'out-in',
