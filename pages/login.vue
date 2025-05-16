@@ -54,7 +54,7 @@ async function signInProvider(provider: Provider) {
     <UForm
       :schema="schema"
       :state="state"
-      class="flex flex-col items-center justify-center h-svh space-y-4"
+      class="flex h-svh flex-col items-center justify-center space-y-4"
       :validate-on="['change']"
       @submit="signInWithPassword"
     >

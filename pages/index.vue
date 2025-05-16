@@ -42,7 +42,7 @@ onMounted(() => {
 <template>
   <div class="p-10">
     <div
-      class="grid grid-cols-4 gap-4 justify-center items-center justify-items-center p-8 border mb-5"
+      class="mb-5 grid grid-cols-4 items-center justify-center justify-items-center gap-4 border p-8"
     >
       <UAlert
         title="Heads up!"

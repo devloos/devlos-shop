@@ -12,7 +12,7 @@ watch(
       navigateTo(path || '/');
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 

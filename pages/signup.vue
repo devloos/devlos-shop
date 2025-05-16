@@ -38,7 +38,7 @@ async function onSubmit() {
   <UForm
     :schema="schema"
     :state="state"
-    class="flex flex-col items-center h-svh justify-center gap-y-4"
+    class="flex h-svh flex-col items-center justify-center gap-y-4"
     :validate-on="['change']"
     @submit="onSubmit"
   >
