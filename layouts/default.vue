@@ -94,9 +94,9 @@ function closeNav() {
 
         <div class="flex grow items-center justify-end transition-all lg:gap-1">
           <UButtonGroup
-            class="transition-all duration-300 ease-in-out"
+            class="flex grow justify-end"
             :class="{
-              'grow ps-3 pe-1 md:ps-5': isSearching,
+              'ps-3 pe-1 md:ps-5': isSearching,
             }"
           >
             <UButton
@@ -110,7 +110,7 @@ function closeNav() {
               <UInput
                 v-model.trim="search"
                 class="search-input"
-                :class="{ 'search-input-close': !isSearching }"
+                :class="{ 'w-0!': !isSearching }"
                 placeholder="Search"
                 size="xl"
                 :variant="isSearching ? 'outline' : 'ghost'"
@@ -212,18 +212,12 @@ function closeNav() {
   height: auto;
 }
 
-@starting-style {
-  .search-input {
-    width: 0;
-    transition: width 0.3s ease;
-  }
-}
-
 .search-input {
+  transition: width 0.3s ease;
   width: 100%;
-}
 
-.search-input-close {
-  width: 0;
+  @starting-style {
+    width: 0;
+  }
 }
 </style>
