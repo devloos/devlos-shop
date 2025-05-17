@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { greaterOrEqual } = useBreakpoints();
 
 const user = useSupabaseUser();
@@ -12,6 +12,24 @@ function toggleSearch() {
 
   menuOpen.value = false;
 }
+
+const delayedIsSearching = ref(false);
+let timeout: NodeJS.Timeout | undefined = undefined;
+
+watch(isSearching, () => {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+
+  timeout = setTimeout(() => {
+    delayedIsSearching.value = isSearching.value;
+    timeout = undefined;
+  }, 200);
+});
+
+onUnmounted(() => {
+  clearTimeout(timeout);
+});
 
 const menuOpen = ref(false);
 
@@ -32,7 +50,7 @@ function closeNav() {
 <template>
   <div>
     <header
-      class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/10 to-light/30 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t from-25% px-4 py-4 backdrop-blur-sm md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
+      class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/30 to-light/40 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t from-25% px-4 py-4 backdrop-blur-sm md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
       :class="{
         'nav-open': (isSearching && !!search) || menuOpen,
       }"
@@ -45,7 +63,7 @@ function closeNav() {
           >
             <Icon class="text-4xl" name="svgs:logo" />
             <p
-              v-if="greaterOrEqual('xl') || !isSearching"
+              v-if="greaterOrEqual('xl') || (!delayedIsSearching && !isSearching)"
               class="text-lg font-semibold md:hidden xl:block"
             >
               Devlos Shop
@@ -54,7 +72,7 @@ function closeNav() {
         </div>
 
         <div
-          v-if="!isSearching"
+          v-if="!delayedIsSearching && !isSearching"
           class="hidden grow justify-center md:flex md:gap-5 xl:gap-10"
         >
           <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
@@ -88,19 +106,21 @@ function closeNav() {
               size="xl"
               @click="toggleSearch"
             />
-            <template v-if="isSearching">
+            <template v-if="delayedIsSearching || isSearching">
               <UInput
                 v-model.trim="search"
                 class="search-input"
+                :class="{ 'search-input-close': !isSearching }"
                 placeholder="Search"
                 size="xl"
-                variant="outline"
+                :variant="isSearching ? 'outline' : 'ghost'"
                 autofocus
               />
               <UButton
+                v-if="isSearching"
                 icon="svgs:x"
                 color="neutral"
-                variant="outline"
+                :variant="isSearching ? 'outline' : 'ghost'"
                 size="xl"
                 @click="search = ''"
               />
@@ -182,6 +202,10 @@ function closeNav() {
   height: var(--navbar-height);
   overflow-y: clip;
   transition: height 0.3s;
+
+  /* for some reason backdrop doesnt work on safari when using tailwind */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .nav-open {
@@ -197,5 +221,9 @@ function closeNav() {
 
 .search-input {
   width: 100%;
+}
+
+.search-input-close {
+  width: 0;
 }
 </style>
