@@ -2,3 +2,10 @@
   --header-height: 130px;
   --navbar-height: 74px;
 }
+
+@media (max-width: 640çpx) {
+  :root {
+    --header-height: 118px;
+    --navbar-height: 62px;
+  }
+}
