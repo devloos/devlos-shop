@@ -22,11 +22,6 @@ const items2 = ref<BreadcrumbItem[]>([
     icon: 'i-lucide-box',
     to: '/',
   },
-  {
-    label: 'Breadcrumb',
-    icon: 'i-lucide-link',
-    to: '/',
-  },
 ]);
 
 const color = ref<
@@ -40,9 +35,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-10">
+  <div class="container mx-auto p-2">
     <div
-      class="mb-5 grid grid-cols-4 items-center justify-center justify-items-center gap-4 border p-8"
+      class="mb-5 grid grid-cols-1 items-center justify-center justify-items-center gap-4 border p-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     >
       <UAlert
         title="Heads up!"
