@@ -63,13 +63,17 @@ function toggleMenu() {
   search.value = '';
 }
 
-const refHeader = useTemplateRef('refHeader');
-
-onClickOutside(refHeader, () => {
+function closeNav() {
   isSearching.value = false;
   search.value = '';
   menuOpen.value = false;
-});
+}
+
+const refHeader = useTemplateRef('refHeader');
+onClickOutside(refHeader, closeNav);
+
+const route = useRoute();
+watch(() => route.fullPath, closeNav);
 </script>
 
 <template>
