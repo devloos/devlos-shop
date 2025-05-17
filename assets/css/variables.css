@@ -3,7 +3,7 @@
   --navbar-height: 74px;
 }
 
-@media (max-width: 640çpx) {
+@media (max-width: 640px) {
   :root {
     --header-height: 118px;
     --navbar-height: 62px;
