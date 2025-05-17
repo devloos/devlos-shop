@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const colorMode = useColorMode();
 
 const isDark = computed({
@@ -14,6 +14,7 @@ const isDark = computed({
 <template>
   <ClientOnly v-if="!colorMode?.forced">
     <UButton
+      :class="$attrs.class"
       :icon="isDark ? 'svgs:moon' : 'svgs:sun'"
       color="neutral"
       variant="ghost"

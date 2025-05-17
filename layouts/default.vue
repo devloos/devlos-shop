@@ -1,4 +1,27 @@
 <script setup lang="ts">
+const NAV_LINKS = [
+  {
+    to: '/privacy',
+    name: 'Shop',
+  },
+  {
+    to: '/privacy',
+    name: 'Contact',
+  },
+  {
+    to: '/privacy',
+    name: 'Changelog',
+  },
+  {
+    to: '/privacy',
+    name: 'Privacy',
+  },
+  {
+    to: '/privacy',
+    name: 'FAQ',
+  },
+];
+
 const { greaterOrEqual } = useBreakpoints();
 
 const user = useSupabaseUser();
@@ -53,7 +76,7 @@ onClickOutside(refHeader, () => {
   <div>
     <header
       ref="refHeader"
-      class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/30 to-light/40 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t from-25% px-4 py-4 backdrop-blur-sm md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
+      class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/50 to-light/50 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t from-25% px-4 py-4 backdrop-blur-md md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
       :class="{
         'nav-open': (isSearching && !!search) || menuOpen,
       }"
@@ -78,20 +101,13 @@ onClickOutside(refHeader, () => {
           v-if="!delayedIsSearching && !isSearching"
           class="hidden grow justify-center md:flex md:gap-5 xl:gap-10"
         >
-          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
-            Shop
-          </NuxtLink>
-          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
-            Contact
-          </NuxtLink>
-          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
-            Changelog
-          </NuxtLink>
-          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
-            Privacy
-          </NuxtLink>
-          <NuxtLink to="privacy" class="hover:text-primary/50 transition-all">
-            FAQ
+          <NuxtLink
+            v-for="link in NAV_LINKS"
+            :key="link.name"
+            :to="link.to"
+            class="hover:text-primary/50 transition-all"
+          >
+            {{ link.name }}
           </NuxtLink>
         </div>
 
@@ -130,7 +146,7 @@ onClickOutside(refHeader, () => {
             </template>
           </UButtonGroup>
 
-          <ThemeSelector />
+          <ThemeSelector class="hidden md:flex" />
 
           <template v-if="user">
             <UButton
@@ -141,18 +157,11 @@ onClickOutside(refHeader, () => {
               size="xl"
               @click="navigateTo('/account')"
             />
-            <UButton
-              class="hidden md:flex"
-              icon="svgs:shopping-bag"
-              color="neutral"
-              variant="ghost"
-              size="xl"
-            />
+            <UButton icon="svgs:shopping-bag" color="neutral" variant="ghost" size="xl" />
           </template>
           <template v-else>
             <div class="flex items-center justify-end gap-4">
               <UButton
-                class="hidden md:flex"
                 icon="svgs:shopping-bag"
                 color="neutral"
                 variant="ghost"
@@ -184,11 +193,21 @@ onClickOutside(refHeader, () => {
         </div>
       </div>
 
-      <div class="p-3">
+      <div v-if="isSearching" class="px-3 pt-6 pb-3">
         <p>SEARCHING</p>
         <p>SEARCHING</p>
         <p>SEARCHING</p>
         <p>SEARCHING</p>
+      </div>
+      <div v-else class="flex flex-col gap-3 px-3 pt-6 pb-3">
+        <NuxtLink
+          v-for="link in NAV_LINKS"
+          :key="link.name"
+          :to="link.to"
+          class="hover:text-primary/50 text-lg tracking-wider transition-all"
+        >
+          {{ link.name }}
+        </NuxtLink>
       </div>
     </header>
 
