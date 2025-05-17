@@ -13,6 +13,24 @@ function toggleSearch() {
   menuOpen.value = false;
 }
 
+const delayedIsSearching = ref(false);
+let timeout: NodeJS.Timeout | undefined = undefined;
+
+watch(isSearching, () => {
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+
+  timeout = setTimeout(() => {
+    delayedIsSearching.value = isSearching.value;
+    timeout = undefined;
+  }, 200);
+});
+
+onUnmounted(() => {
+  clearTimeout(timeout);
+});
+
 const menuOpen = ref(false);
 
 function toggleMenu() {
@@ -27,20 +45,6 @@ function closeNav() {
   search.value = '';
   menuOpen.value = false;
 }
-
-const delayedIsSearching = ref(false);
-let timeout: NodeJS.Timeout | null = null;
-
-watch(isSearching, () => {
-  if (timeout) {
-    clearTimeout(timeout);
-  }
-
-  timeout = setTimeout(() => {
-    delayedIsSearching.value = isSearching.value;
-    timeout = null;
-  }, 200);
-});
 </script>
 
 <template>
