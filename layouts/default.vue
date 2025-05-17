@@ -1,26 +1,6 @@
 <script setup lang="ts">
-const NAV_LINKS = [
-  {
-    to: '/privacy',
-    name: 'Shop',
-  },
-  {
-    to: '/privacy',
-    name: 'Contact',
-  },
-  {
-    to: '/privacy',
-    name: 'Changelog',
-  },
-  {
-    to: '/privacy',
-    name: 'Privacy',
-  },
-  {
-    to: '/privacy',
-    name: 'FAQ',
-  },
-];
+import { NAV_LINKS } from '~/assets/constants/nav-links';
+import { PRODUCTS } from '~/assets/constants/products';
 
 const { greaterOrEqual } = useBreakpoints();
 
@@ -198,10 +178,25 @@ watch(() => route.fullPath, closeNav);
       </div>
 
       <div v-if="isSearching" class="px-3 pt-6 pb-3">
-        <p>SEARCHING</p>
-        <p>SEARCHING</p>
-        <p>SEARCHING</p>
-        <p>SEARCHING</p>
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div
+            v-for="product in PRODUCTS"
+            :key="product.name"
+            class="flex items-center gap-2"
+          >
+            <NuxtImg
+              :src="product.imageUrl"
+              :alt="product.name"
+              :width="160"
+              placeholder
+            />
+            <div>
+              <p class="font-semibold">{{ product.name }}</p>
+              <p class="text-sm">{{ product.description }}</p>
+              <p>${{ product.price }}</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div v-else class="flex flex-col gap-3 px-3 pt-6 pb-3">
         <NuxtLink
