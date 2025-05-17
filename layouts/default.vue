@@ -40,16 +40,19 @@ function toggleMenu() {
   search.value = '';
 }
 
-function closeNav() {
+const refHeader = useTemplateRef('refHeader');
+
+onClickOutside(refHeader, () => {
   isSearching.value = false;
   search.value = '';
   menuOpen.value = false;
-}
+});
 </script>
 
 <template>
   <div>
     <header
+      ref="refHeader"
       class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/30 to-light/40 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t from-25% px-4 py-4 backdrop-blur-sm md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
       :class="{
         'nav-open': (isSearching && !!search) || menuOpen,
@@ -189,9 +192,7 @@ function closeNav() {
       </div>
     </header>
 
-    <div @click="closeNav">
-      <slot />
-    </div>
+    <slot />
 
     <footer>FOOTER</footer>
   </div>
