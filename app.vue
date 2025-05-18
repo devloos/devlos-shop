@@ -32,7 +32,7 @@ useHead({
   <UApp>
     <NuxtLayout>
       <NuxtPage
-        class="py-[var(--header-height)]"
+        class="page py-[var(--header-height)]"
         :transition="{
           name: 'slide-up',
           mode: 'out-in',
@@ -43,6 +43,10 @@ useHead({
 </template>
 
 <style>
+.page {
+  min-height: calc(100svh - var(--footer-height));
+}
+
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: all 0.4s;

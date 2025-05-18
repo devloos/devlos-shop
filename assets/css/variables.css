@@ -1,11 +1,13 @@
 :root {
   --header-height: 130px;
   --navbar-height: 74px;
+  --footer-height: 386px;
 }
 
 @media (max-width: 640px) {
   :root {
     --header-height: 118px;
     --navbar-height: 62px;
+    --footer-height: 422px;
   }
 }
