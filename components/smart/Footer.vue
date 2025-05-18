@@ -7,16 +7,16 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-  <footer class="relative mt-40">
+  <footer class="relative mt-45">
     <div class="absolute inset-x-0 -top-50 sm:-top-65">
-      <NuxtImg class="mx-auto" src="/devlos-shop/gpt-2.png" alt="luffy" width="520" />
+      <NuxtImg class="mx-auto" src="/devlos-shop/gpt-2.png" alt="gpt" width="520" />
     </div>
 
     <div
-      class="border-content-300/25 dark:border-content-300/50 dark:bg-dark/50 bg-light/50 mx-auto mt-4 border-t px-4 pt-10 backdrop-blur-md md:px-6 dark:from-50%"
+      class="border-content-300/25 dark:border-content-300/50 dark:bg-dark/50 bg-light/50 mt-4 border-t px-4 pt-10 backdrop-blur-md md:px-6"
     >
       <div class="flex flex-col items-center gap-4 pb-14">
-        <Icon class="text-5xl" name="svgs:logo" />
+        <Icon class="mb-2 text-5xl" name="svgs:logo" />
 
         <p class="pb-5 text-2xl font-semibold tracking-wide">Devlos Shop</p>
 
@@ -48,9 +48,18 @@ const year = new Date().getFullYear();
                 @click="isDark = !isDark"
               />
             </ClientOnly>
-            <UButton icon="svgs:github" color="neutral" variant="ghost" size="xl" />
-            <UButton icon="svgs:linkedin" color="neutral" variant="ghost" size="xl" />
-            <UButton icon="svgs:instagram" color="neutral" variant="ghost" size="xl" />
+
+            <a href="https://github.com/devloos/devlos-shop" target="_blank">
+              <UButton icon="svgs:github" color="neutral" variant="ghost" size="xl" />
+            </a>
+
+            <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
+              <UButton icon="svgs:linkedin" color="neutral" variant="ghost" size="xl" />
+            </a>
+
+            <a href="https://www.instagram.com/devloos" target="_blank">
+              <UButton icon="svgs:instagram" color="neutral" variant="ghost" size="xl" />
+            </a>
           </div>
         </div>
       </div>
