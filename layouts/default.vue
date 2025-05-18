@@ -60,7 +60,7 @@ watch(() => route.fullPath, closeNav);
   <div>
     <header
       ref="refHeader"
-      class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/50 to-light/50 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t from-25% px-4 py-2 backdrop-blur-md sm:py-4 md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
+      class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/50 to-light/50 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t px-4 py-2 backdrop-blur-md sm:py-4 md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
       :class="{
         'nav-open': (isSearching && !!search) || menuOpen,
       }"
