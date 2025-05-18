@@ -2,6 +2,8 @@
 import { NAV_LINKS } from '~/assets/constants/nav-links';
 import { PRODUCTS } from '~/assets/constants/products';
 
+const { isDark, forced } = useTheme();
+
 const { greaterOrEqual } = useBreakpoints();
 
 const user = useSupabaseUser();
@@ -147,7 +149,16 @@ watch(windowWidth, () => {
             </template>
           </UButtonGroup>
 
-          <ThemeSelector class="hidden md:flex" />
+          <ClientOnly v-if="!forced">
+            <UButton
+              class="hidden md:flex"
+              :icon="isDark ? 'svgs:moon' : 'svgs:sun'"
+              color="neutral"
+              variant="ghost"
+              size="xl"
+              @click="isDark = !isDark"
+            />
+          </ClientOnly>
 
           <template v-if="user">
             <UButton
@@ -171,7 +182,7 @@ watch(windowWidth, () => {
 
               <div class="group relative hidden md:inline-flex">
                 <div
-                  class="bg-primary absolute inset-2.5 rounded-2xl opacity-90 blur-lg transition-all group-hover:inset-2 group-hover:opacity-100 group-hover:duration-300"
+                  class="bg-primary absolute inset-2.5 rounded-2xl opacity-60 blur-lg transition-all group-hover:inset-2 group-hover:opacity-80 group-hover:duration-300"
                 />
                 <NuxtLink
                   class="bg-primary text-base-100 z-10 rounded-md px-3 py-1"
@@ -224,6 +235,24 @@ watch(windowWidth, () => {
         >
           {{ link.name }}
         </NuxtLink>
+
+        <div class="flex gap-2 pt-2">
+          <ClientOnly v-if="!forced">
+            <UButton color="primary" size="xl" block @click="isDark = !isDark">
+              <div class="flex items-center gap-2">
+                <Icon class="text-xl" :name="isDark ? 'svgs:sun' : 'svgs:moon'" />
+                <span>{{ isDark ? 'Light' : 'Dark' }}</span>
+              </div>
+            </UButton>
+          </ClientOnly>
+
+          <UButton color="primary" size="xl" block @click="navigateTo('/account')">
+            <div class="flex items-center gap-2">
+              <Icon class="text-xl" name="svgs:profile" />
+              <span>{{ user ? 'Account' : 'Login' }}</span>
+            </div>
+          </UButton>
+        </div>
       </div>
     </header>
 
