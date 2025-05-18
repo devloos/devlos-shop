@@ -9,11 +9,20 @@ const user = useSupabaseUser();
 const isSearching = ref(false);
 const search = ref('');
 
+// TODO: Fetch from supabase
+const searchProducts = computed(() => {
+  if (search.value) {
+    return PRODUCTS;
+  }
+
+  return [];
+});
+
 function toggleSearch() {
+  menuOpen.value = false;
+
   isSearching.value = !isSearching.value;
   search.value = '';
-
-  menuOpen.value = false;
 }
 
 const delayedIsSearching = ref(false);
@@ -39,8 +48,8 @@ const menuOpen = ref(false);
 function toggleMenu() {
   menuOpen.value = !menuOpen.value;
 
-  isSearching.value = false;
   search.value = '';
+  isSearching.value = false;
 }
 
 function closeNav() {
@@ -54,6 +63,14 @@ onClickOutside(refHeader, closeNav);
 
 const route = useRoute();
 watch(() => route.fullPath, closeNav);
+
+const { width: windowWidth } = useWindowSize();
+
+watch(windowWidth, () => {
+  if (greaterOrEqual('md') && menuOpen.value) {
+    menuOpen.value = false;
+  }
+});
 </script>
 
 <template>
@@ -180,7 +197,7 @@ watch(() => route.fullPath, closeNav);
       <div v-if="isSearching" class="px-3 pt-6 pb-3">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <div
-            v-for="product in PRODUCTS"
+            v-for="product in searchProducts"
             :key="product.name"
             class="flex items-center gap-2"
           >
