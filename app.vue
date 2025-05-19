@@ -25,6 +25,12 @@ useHead({
     { rel: 'canonical', href: runtimeConfig.public.baseUrl },
     { rel: 'apple-touch-icon', href: '/assets/logo-1280.png' },
   ],
+  script: [
+    {
+      src: 'https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js',
+      type: 'module',
+    },
+  ],
 });
 </script>
 

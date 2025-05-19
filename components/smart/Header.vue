@@ -78,7 +78,7 @@ watch(windowWidth, () => {
 <template>
   <header
     ref="refHeader"
-    class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/50 to-light/50 dark:to-light/5 fixed top-0 right-0 left-0 z-10 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t px-4 py-2 backdrop-blur-md sm:py-4 md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
+    class="nav border-content-300/25 dark:border-content-300/50 from-dark/5 dark:from-dark/50 to-light/50 dark:to-light/5 fixed top-0 right-0 left-0 z-50 mx-auto my-4 max-w-11/12 rounded-lg border bg-linear-to-t px-4 py-2 backdrop-blur-md sm:py-4 md:max-w-10/12 md:px-6 lg:max-w-8/12 dark:from-50%"
     :class="{
       'nav-open': (isSearching && !!search) || menuOpen,
     }"
@@ -92,7 +92,7 @@ watch(windowWidth, () => {
           <Icon class="text-4xl" name="svgs:logo" />
           <p
             v-if="greaterOrEqual('xl') || (!delayedIsSearching && !isSearching)"
-            class="text-lg font-semibold md:hidden xl:block"
+            class="text-xl font-semibold md:hidden xl:block"
           >
             Devlos Shop
           </p>
@@ -176,10 +176,10 @@ watch(windowWidth, () => {
 
             <div class="group relative hidden md:inline-flex">
               <div
-                class="bg-primary absolute inset-2.5 rounded-2xl opacity-60 blur-lg transition-all group-hover:inset-2 group-hover:opacity-80 group-hover:duration-300"
+                class="bg-primary absolute inset-2.5 rounded-2xl opacity-60 blur-lg transition-all duration-200 group-hover:inset-2 group-hover:opacity-80"
               />
               <NuxtLink
-                class="bg-primary text-base-100 z-10 rounded-md px-3 py-1"
+                class="bg-primary text-base-100 z-50 rounded-md px-3 py-1"
                 to="/login"
               >
                 Login
