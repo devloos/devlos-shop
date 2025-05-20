@@ -63,19 +63,9 @@ onMounted(() => {
           </p>
         </div>
 
-        <div class="group pointer-events-auto relative mx-auto max-w-42">
-          <!-- TODO: GLOW -->
-          <!-- <div
-            class="bg-primary absolute inset-0 rounded opacity-0 blur-lg transition-all duration-200 group-hover:inset-4 group-hover:opacity-100"
-          /> -->
-
-          <UButton
-            class="animate-border hover:bg-primary"
-            size="xl"
-            color="primary"
-            block
-          >
-            <span class="z-1">Shop Now</span>
+        <div class="animate-border pointer-events-auto mx-auto max-w-42">
+          <UButton class="hover:bg-primary tracking-wide" size="xl" color="primary" block>
+            Shop Now
           </UButton>
         </div>
       </div>
@@ -137,40 +127,54 @@ h1 {
   background: linear-gradient(0deg, var(--color-base-100), transparent);
 }
 
-.animate-border {
-  position: relative;
-  overflow: hidden;
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
+.animate-border {
+  position: relative;
+}
+
+.animate-border::after,
 .animate-border::before {
   content: '';
   position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    var(--color-base-100) 90%,
+    var(--color-primary)
+  );
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  aspect-ratio: 1;
-  width: 100%;
-  background: conic-gradient(transparent 270deg, var(--color-base-100), transparent);
-  animation: rotate 3s linear infinite;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 1.35rem 5.35rem;
+  border-radius: calc(var(--ui-radius) * 1.5);
+  animation: 3s rotate linear infinite;
+  transition: opacity 0.3s ease;
 }
 
-.animate-border::after {
-  content: '';
-  background: inherit;
-  border-radius: inherit;
-  position: absolute;
-  inset: 2px;
-  height: calc(100% - 2 * 2px);
-  width: calc(100% - 2 * 2px);
+.animate-border::before {
+  background: var(--color-primary);
+  filter: blur(1rem);
+  opacity: 0.3;
+}
+
+.animate-border:hover::before {
+  opacity: 0.5;
 }
 
 @keyframes rotate {
   from {
-    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+    --angle: 0deg;
   }
 
   to {
-    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+    --angle: 360deg;
   }
 }
 </style>
