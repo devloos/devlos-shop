@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/supabase',
     '@nuxt/fonts',
+    '@tresjs/nuxt',
   ],
   colorMode: {
     fallback: 'dark',

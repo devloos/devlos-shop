@@ -69,12 +69,10 @@ onMounted(() => {
           </UButton>
         </div>
       </div>
-      <ClientOnly>
-        <spline-viewer
-          class="hero-shadow"
-          url="https://prod.spline.design/1XZCQKFsNR86LmL6/scene.splinecode"
-        />
-      </ClientOnly>
+
+      <div class="hero-shadow h-full">
+        <HeroModel />
+      </div>
     </div>
     <div class="container mx-auto p-2">
       <div
