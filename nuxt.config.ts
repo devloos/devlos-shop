@@ -10,6 +10,13 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => {
+        return tag.startsWith('spline-');
+      },
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

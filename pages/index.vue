@@ -44,7 +44,9 @@ onMounted(() => {
           Discover new tech designed to elevate your everyday.
         </h1>
 
-        <div class="flex justify-center gap-6 py-8">
+        <div
+          class="flex flex-wrap justify-center gap-4 pt-8 pb-10 text-sm sm:gap-6 sm:text-base"
+        >
           <p class="flex items-center gap-2">
             <Icon class="text-xl" name="svgs:fast-clock" />
             <span>Fast Shipping</span>
@@ -127,12 +129,12 @@ h1 {
 
 .hero-shadow::before {
   top: 0;
-  background: linear-gradient(180deg, var(--color-base-100), rgba(255, 0, 0, 0));
+  background: linear-gradient(180deg, var(--color-base-100), transparent);
 }
 
 .hero-shadow::after {
   bottom: 0;
-  background: linear-gradient(0deg, var(--color-base-100), rgba(255, 0, 0, 0));
+  background: linear-gradient(0deg, var(--color-base-100), transparent);
 }
 
 .animate-border {

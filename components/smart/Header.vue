@@ -8,12 +8,16 @@ const { greaterOrEqual } = useBreakpoints();
 
 const user = useSupabaseUser();
 
+// the debouncer allows time for animations to finish
 const isSearching = ref(false);
+const debouncedIsSearching = refDebounced(isSearching, 200);
+
 const search = ref('');
+const debouncedSearch = refDebounced(search, 200);
 
 // TODO: Fetch from supabase
 const searchProducts = computed(() => {
-  if (search.value) {
+  if (!!debouncedSearch.value || search.value) {
     return PRODUCTS;
   }
 
@@ -26,24 +30,6 @@ function toggleSearch() {
   isSearching.value = !isSearching.value;
   search.value = '';
 }
-
-const delayedIsSearching = ref(false);
-let timeout: NodeJS.Timeout | undefined = undefined;
-
-watch(isSearching, () => {
-  if (timeout) {
-    clearTimeout(timeout);
-  }
-
-  timeout = setTimeout(() => {
-    delayedIsSearching.value = isSearching.value;
-    timeout = undefined;
-  }, 200);
-});
-
-onUnmounted(() => {
-  clearTimeout(timeout);
-});
 
 const menuOpen = ref(false);
 
@@ -91,7 +77,7 @@ watch(windowWidth, () => {
         >
           <Icon class="text-4xl" name="svgs:logo" />
           <p
-            v-if="greaterOrEqual('xl') || (!delayedIsSearching && !isSearching)"
+            v-if="greaterOrEqual('xl') || (!debouncedIsSearching && !isSearching)"
             class="text-xl font-semibold md:hidden xl:block"
           >
             Devlos Shop
@@ -100,7 +86,7 @@ watch(windowWidth, () => {
       </div>
 
       <div
-        v-if="!delayedIsSearching && !isSearching"
+        v-if="!debouncedIsSearching && !isSearching"
         class="hidden grow justify-center md:flex md:gap-5 xl:gap-10"
       >
         <NuxtLink
@@ -127,7 +113,7 @@ watch(windowWidth, () => {
             size="xl"
             @click="toggleSearch"
           />
-          <template v-if="delayedIsSearching || isSearching">
+          <template v-if="debouncedIsSearching || isSearching">
             <UInput
               v-model.trim="search"
               class="search-input"
