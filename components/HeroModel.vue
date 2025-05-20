@@ -12,7 +12,7 @@ const clearColor = computed(() => (isDark.value ? DARK_BG_COLOR : LIGHT_BG_COLOR
 <template>
   <TresCanvas :clear-color="clearColor">
     <TresPerspectiveCamera :position="[3, 3, 3]" :look-at="[0, 0, 0]" />
-    <MouseParallax :factor="-1.25" :ease="0.3" local />
+    <MouseParallax :factor="-0.7" local />
     <TresMesh>
       <TresTorusGeometry :args="[1, 0.5, 16, 32]" />
       <TresMeshBasicMaterial color="orange" />
