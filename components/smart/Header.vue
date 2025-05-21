@@ -185,7 +185,7 @@ watch(windowWidth, () => {
       </div>
     </div>
 
-    <div v-if="isSearching" class="px-3 pt-6 pb-3">
+    <div v-if="isSearching || debouncedSearch" class="px-3 pt-6 pb-3">
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div
           v-for="product in searchProducts"
