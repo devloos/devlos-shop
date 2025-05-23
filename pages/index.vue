@@ -117,7 +117,7 @@ h1 {
 
 .hero-shadow::before {
   top: 0;
-  background: linear-gradient(180deg, var(--color-base-100), transparent);
+  background: linear-gradient(180deg, var(--color-base-100) 60%, transparent);
 }
 
 .hero-shadow::after {
