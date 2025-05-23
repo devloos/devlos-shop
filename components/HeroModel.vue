@@ -31,6 +31,12 @@ const clearColor = computed(() => (isDark.value ? DARK_BG_COLOR : LIGHT_BG_COLOR
       </TresMesh>
     </Suspense>
 
+    <Suspense>
+      <TresMesh :position="[0, 0, 0]">
+        <GLTFModel path="/models/luffy.glb" />
+      </TresMesh>
+    </Suspense>
+
     <TresDirectionalLight :intensity="4" :position="[-3, 1, 3]" cast-shadow />
     <TresAmbientLight :intensity="1" />
   </TresCanvas>

@@ -106,7 +106,7 @@ h1 {
 
 .hero-shadow::before,
 .hero-shadow::after {
-  height: calc(100svh - 60%);
+  height: calc(100svh - 80%);
   content: '';
   position: absolute;
   right: 0;

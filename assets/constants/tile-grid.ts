@@ -4,10 +4,6 @@ export const TILE_GRID = [
   [
     {
       path: '/models/slab/slab-secondary.glb',
-      position: new Vector3(0, 0, 0),
-    },
-    {
-      path: '/models/slab/slab-secondary.glb',
       position: new Vector3(1.05, 0, 0),
     },
     {
