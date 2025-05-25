@@ -105,6 +105,7 @@
 }
 
 :root {
+  /* NUXT UI */
   --ui-primary: var(--color-primary-500);
   --ui-secondary: var(--color-secondary-500);
   --ui-accent: var(--color-accent-500);
@@ -148,4 +149,9 @@
   /* Radius and Border */
   --ui-radius: 0.25rem;
   --ui-border-size: 1px;
+
+  /* THEME VARIABLES */
+  --logo-green: oklch(58% 0.0709 187deg);
+  --logo-cyan: oklch(57.4% 0.0853 221deg);
+  --logo-gray: oklch(43.2% 0.0265 257deg);
 }
