@@ -64,7 +64,12 @@ onMounted(() => {
         </div>
 
         <div class="animate-border pointer-events-auto mx-auto max-w-42">
-          <UButton class="hover:bg-primary tracking-wide" size="xl" color="primary" block>
+          <UButton
+            class="hover:bg-primary-300 dark:hover:bg-primary-700 tracking-wide transition-all"
+            size="xl"
+            color="primary"
+            block
+          >
             Shop Now
           </UButton>
         </div>
@@ -154,16 +159,6 @@ h1 {
   border-radius: calc(var(--ui-radius) * 1.5);
   animation: 3s rotate linear infinite;
   transition: opacity 0.3s ease;
-}
-
-.animate-border::before {
-  background: var(--color-primary);
-  filter: blur(1rem);
-  opacity: 0.3;
-}
-
-.animate-border:hover::before {
-  opacity: 0.5;
 }
 
 @keyframes rotate {
