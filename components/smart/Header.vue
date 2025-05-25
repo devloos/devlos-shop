@@ -115,7 +115,7 @@ watch(windowWidth, () => {
           />
           <template v-if="debouncedIsSearching || isSearching">
             <UInput
-              v-model.trim="search"
+              v-model="search"
               class="search-input"
               :class="{ 'w-0!': !isSearching }"
               placeholder="Search"
