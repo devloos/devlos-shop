@@ -160,17 +160,12 @@ watch(windowWidth, () => {
           <div class="flex items-center justify-end gap-4">
             <UButton icon="svgs:shopping-bag" color="neutral" variant="ghost" size="xl" />
 
-            <div class="group relative hidden md:inline-flex">
-              <div
-                class="bg-primary absolute inset-2.5 rounded-2xl opacity-60 blur-lg transition-all duration-200 group-hover:inset-2 group-hover:opacity-80"
-              />
-              <NuxtLink
-                class="bg-primary text-base-100 z-50 rounded-md px-3 py-1"
-                to="/login"
-              >
-                Login
-              </NuxtLink>
-            </div>
+            <NuxtLink
+              class="bg-primary text-base-100 z-50 hidden rounded-md px-3 py-1 md:inline-flex"
+              to="/login"
+            >
+              Login
+            </NuxtLink>
           </div>
         </template>
 
