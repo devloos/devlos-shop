@@ -1,6 +1,9 @@
 <template>
   <div class="md:mt-8">
     <div class="relative h-svh">
+      <div class="ds-shadow-inset-top canvas-height" />
+      <div class="ds-shadow-inset-bottom canvas-height" />
+
       <div class="pointer-events-none absolute inset-x-0 z-10 text-center">
         <h1
           class="mx-auto max-w-[42rem] px-2 text-center text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl"
@@ -39,8 +42,45 @@
         </div>
       </div>
 
-      <div class="canvas-shadow h-full">
-        <ModelCanvas />
+      <ModelCanvas class="h-full" />
+    </div>
+
+    <div class="relative my-24">
+      <div class="ds-shadow-inset-top h-24" />
+      <div class="ds-shadow-inset-bottom h-24" />
+      <div class="ds-shadow-inset-left w-36" />
+      <div class="ds-shadow-inset-right w-36" />
+
+      <div class="*:ring-content-300/50 relative grid grid-cols-5 *:ring-[0.5px]">
+        <div v-for="i in 5" :key="i" class="h-36" />
+        <div v-for="i in 5" :key="i" class="h-12" />
+
+        <div />
+        <div class="p-2 text-6xl">Build the perfect tools.</div>
+        <div class="dotted-background col-span-2 row-span-2 text-center">
+          <Icon class="text-[15rem]" name="svgs:github" />
+        </div>
+        <div />
+
+        <div />
+        <div class="p-2 text-3xl">Buy everything now.</div>
+        <div />
+
+        <div v-for="i in 5" :key="i" class="h-12" />
+
+        <div />
+        <div class="dotted-background col-span-2 row-span-2 text-center">
+          <Icon class="text-[15rem]" name="svgs:instagram" />
+        </div>
+        <div class="p-2 text-6xl">Build the perfect tools.</div>
+        <div />
+
+        <div />
+        <div class="p-2 text-3xl">Buy everything now.</div>
+        <div />
+
+        <div v-for="i in 5" :key="i" class="h-12" />
+        <div v-for="i in 5" :key="i" class="h-36" />
       </div>
     </div>
   </div>
@@ -51,27 +91,46 @@ h1 {
   font-family: Manrope sans-serif;
 }
 
-.canvas-shadow::before,
-.canvas-shadow::after {
+.canvas-height {
   height: calc(100svh - 80%);
-  content: '';
+}
+
+.ds-shadow-inset-top,
+.ds-shadow-inset-bottom,
+.ds-shadow-inset-left,
+.ds-shadow-inset-right {
   position: absolute;
-  right: 0;
-  left: 0;
-  z-index: 5;
   pointer-events: none;
-}
-
-.canvas-shadow::before {
-  top: 0;
-  mask-image: linear-gradient(180deg, black 0%, transparent 100%);
   background: var(--color-base-100);
+  z-index: 5;
 }
 
-.canvas-shadow::after {
-  bottom: 0;
+.ds-shadow-inset-top {
+  top: -1px;
+  left: 0;
+  right: 0;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.ds-shadow-inset-bottom {
+  bottom: -1px;
+  left: 0;
+  right: 0;
   mask-image: linear-gradient(to top, black 0%, transparent 100%);
-  background: var(--color-base-100);
+}
+
+.ds-shadow-inset-left {
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  mask-image: linear-gradient(to right, black 0%, transparent 100%);
+}
+
+.ds-shadow-inset-right {
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  mask-image: linear-gradient(to left, black 0%, transparent 100%);
 }
 
 @property --angle {
@@ -113,5 +172,16 @@ h1 {
   to {
     --angle: 360deg;
   }
+}
+
+.dotted-background {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+  background-image: radial-gradient(var(--color-gray-700) 0.5px, transparent 0);
+  background-repeat: repeat;
+  background-position: -8.5px -8.5px;
+  background-size: 17px 17px;
 }
 </style>
