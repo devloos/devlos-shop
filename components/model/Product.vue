@@ -1,3 +1,4 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
 import { GLTFModel } from '@tresjs/cientos';
 import type { Vector3 } from 'three';
@@ -40,8 +41,13 @@ onBeforeRender(({ delta }) => {
 
 <template>
   <Suspense>
-    <TresMesh ref="refItem" :position="position" :scale="scale">
-      <GLTFModel :path="path" />
+    <TresMesh
+      ref="refItem"
+      :position="position"
+      :scale="scale"
+      @click="navigateTo('/privacy')"
+    >
+      <GLTFModel :path="path" cast-shadow />
     </TresMesh>
   </Suspense>
 </template>

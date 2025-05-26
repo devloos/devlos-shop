@@ -5,7 +5,7 @@ import { GLTFModel } from '@tresjs/cientos';
 <template>
   <Suspense>
     <TresMesh :position="[0, 0, 0]">
-      <GLTFModel path="/models/luffy.glb" />
+      <GLTFModel path="/models/luffy.glb" cast-shadow />
     </TresMesh>
   </Suspense>
 </template>

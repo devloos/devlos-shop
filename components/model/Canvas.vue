@@ -20,14 +20,14 @@ const clearColor = computed(() => (isDark.value ? DARK_BG_COLOR : LIGHT_BG_COLOR
     <template v-for="(row, i) in TILE_GRID" :key="i">
       <Suspense v-for="(tile, index) in row" :key="index">
         <TresMesh :position="tile.position">
-          <GLTFModel :path="tile.path" />
+          <GLTFModel :path="tile.path" receive-shadow />
         </TresMesh>
       </Suspense>
     </template>
 
     <Suspense v-for="(tree, index) in TREES" :key="index">
       <TresMesh :position="tree.position">
-        <GLTFModel :path="tree.path" />
+        <GLTFModel :path="tree.path" cast-shadow />
       </TresMesh>
     </Suspense>
 
