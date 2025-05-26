@@ -75,7 +75,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="hero-shadow h-full">
+      <div class="canvas-shadow h-full">
         <ModelCanvas />
       </div>
     </div>
@@ -109,8 +109,8 @@ h1 {
   font-family: Manrope sans-serif;
 }
 
-.hero-shadow::before,
-.hero-shadow::after {
+.canvas-shadow::before,
+.canvas-shadow::after {
   height: calc(100svh - 80%);
   content: '';
   position: absolute;
@@ -120,14 +120,16 @@ h1 {
   pointer-events: none;
 }
 
-.hero-shadow::before {
+.canvas-shadow::before {
   top: 0;
-  background: linear-gradient(180deg, var(--color-base-100) 60%, transparent);
+  mask-image: linear-gradient(180deg, black 0%, transparent 100%);
+  background: var(--color-base-100);
 }
 
-.hero-shadow::after {
+.canvas-shadow::after {
   bottom: 0;
-  background: linear-gradient(0deg, var(--color-base-100), transparent);
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  background: var(--color-base-100);
 }
 
 @property --angle {
