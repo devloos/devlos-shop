@@ -76,7 +76,7 @@ onMounted(() => {
       </div>
 
       <div class="hero-shadow h-full">
-        <HeroModel />
+        <ModelCanvas />
       </div>
     </div>
     <div class="container mx-auto p-2">

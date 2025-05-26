@@ -163,7 +163,7 @@ export const TILE_GRID = [
       position: new Vector3(0, 0, -2.1),
     },
     {
-      path: '/models/slab/slab-gray.glb',
+      path: '/models/slab/slab-green.glb',
       position: new Vector3(1.05, 0, -2.1),
     },
     {
@@ -185,7 +185,7 @@ export const TILE_GRID = [
       position: new Vector3(0, 0, -3.15),
     },
     {
-      path: '/models/slab/slab-green.glb',
+      path: '/models/slab/slab-cyan.glb',
       position: new Vector3(1.05, 0, -3.15),
     },
     {
@@ -211,7 +211,7 @@ export const TILE_GRID = [
       position: new Vector3(1.05, 0, -4.2),
     },
     {
-      path: '/models/slab/slab-cyan.glb',
+      path: '/models/slab/slab-gray.glb',
       position: new Vector3(2.1, 0, -4.2),
     },
     {
