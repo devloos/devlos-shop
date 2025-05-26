@@ -46,10 +46,10 @@
     </div>
 
     <div class="relative my-24">
-      <div class="ds-shadow-inset-top h-24" />
-      <div class="ds-shadow-inset-bottom h-24" />
-      <div class="ds-shadow-inset-left w-36" />
-      <div class="ds-shadow-inset-right w-36" />
+      <div class="ds-shadow-inset-top h-36" />
+      <div class="ds-shadow-inset-bottom h-36" />
+      <div class="ds-shadow-inset-left w-52" />
+      <div class="ds-shadow-inset-right w-52" />
 
       <div class="*:ring-content-300/50 relative grid grid-cols-5 *:ring-[0.5px]">
         <div v-for="i in 5" :key="i" class="h-36" />
@@ -57,7 +57,7 @@
 
         <div />
         <div class="p-2 text-6xl">Build the perfect tools.</div>
-        <div class="dotted-background col-span-2 row-span-2 text-center">
+        <div class="ds-bg-dotted col-span-2 row-span-2 text-center">
           <Icon class="text-[15rem]" name="svgs:github" />
         </div>
         <div />
@@ -66,10 +66,34 @@
         <div class="p-2 text-3xl">Buy everything now.</div>
         <div />
 
+        <div class="h-72" />
+        <div class="ds-bg-dotted flex h-72 items-center justify-center">
+          <Icon class="text-8xl" name="svgs:secure" />
+        </div>
+        <NuxtLink
+          to="/privacy"
+          class="hover:bg-base-200 group flex h-72 flex-col items-end justify-between gap-3 p-5 transition-all hover:cursor-pointer"
+        >
+          <Icon
+            class="text-xl transition-all group-hover:scale-125"
+            name="svgs:r-diagonal-arrow"
+          />
+          <div>
+            <h3 class="pb-2 text-xl font-semibold tracking-wide">Quality Products</h3>
+            <p class="text-content-300">
+              Battle tested tech and built with security in mind
+            </p>
+          </div>
+        </NuxtLink>
+        <div class="ds-bg-dotted flex h-72 items-center justify-center">
+          <Icon class="text-8xl" name="svgs:sun" />
+        </div>
+        <div class="h-72" />
+
         <div v-for="i in 5" :key="i" class="h-12" />
 
         <div />
-        <div class="dotted-background col-span-2 row-span-2 text-center">
+        <div class="ds-bg-dotted col-span-2 row-span-2 text-center">
           <Icon class="text-[15rem]" name="svgs:instagram" />
         </div>
         <div class="p-2 text-6xl">Build the perfect tools.</div>
@@ -79,7 +103,21 @@
         <div class="p-2 text-3xl">Buy everything now.</div>
         <div />
 
-        <div v-for="i in 5" :key="i" class="h-12" />
+        <div />
+        <div />
+        <NuxtLink
+          to="/privacy"
+          class="hover:bg-base-200 group flex h-14 items-center justify-center gap-3 transition-all hover:cursor-pointer"
+        >
+          <span class="font-semibold tracking-wide">Shop Now</span>
+          <Icon
+            class="text-lg transition-all group-hover:scale-125"
+            name="svgs:r-diagonal-arrow"
+          />
+        </NuxtLink>
+        <div />
+        <div />
+
         <div v-for="i in 5" :key="i" class="h-36" />
       </div>
     </div>
@@ -174,7 +212,7 @@ h1 {
   }
 }
 
-.dotted-background {
+.ds-bg-dotted {
   position: relative;
   align-items: center;
   justify-content: center;
