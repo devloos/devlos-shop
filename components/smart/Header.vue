@@ -108,7 +108,6 @@ watch(windowWidth, () => {
         >
           <UButton
             icon="svgs:search"
-            color="neutral"
             :variant="isSearching ? 'outline' : 'ghost'"
             size="xl"
             @click="toggleSearch"
@@ -120,13 +119,14 @@ watch(windowWidth, () => {
               :class="{ 'w-0!': !isSearching }"
               placeholder="Search"
               size="xl"
-              :variant="isSearching ? 'outline' : 'ghost'"
+              :ui="{
+                base: 'ring ring-inset ring-primary/50 text-primary bg-primary/10 focus:outline-none focus-visible:ring-primary',
+              }"
               autofocus
             />
             <UButton
               v-if="isSearching"
               icon="svgs:x"
-              color="neutral"
               :variant="isSearching ? 'outline' : 'ghost'"
               size="xl"
               @click="search = ''"
