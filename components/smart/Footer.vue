@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div
-      class="border-content-300/25 dark:border-content-300/50 dark:bg-dark/50 bg-light/50 mt-4 border-t px-4 pt-10 backdrop-blur-md md:px-6"
+      class="border-content-300/25 dark:border-content-300/30 dark:bg-dark/50 bg-light/50 mt-4 border-t px-4 pt-10 backdrop-blur-md md:px-6"
     >
       <div class="flex flex-col items-center gap-4 pb-14">
         <Icon class="mb-2 text-5xl" name="svgs:logo" />
@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="mx-auto max-w-11/12 pb-14 lg:max-w-3/5">
-        <hr class="border-content-300/25 dark:border-content-300/50 pb-6" />
+        <hr class="border-content-300/25 dark:border-content-300/30 pb-6" />
 
         <div class="flex flex-col-reverse items-center justify-between gap-4 sm:flex-row">
           <div>©{{ year }} - Devlos Labs</div>
