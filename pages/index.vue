@@ -139,11 +139,26 @@
             />
           </div>
         </div>
-        <div class="p-2 text-6xl">Build the perfect tools.</div>
+        <div class="p-5 text-6xl">Pac-Man Micro Player Pro</div>
         <div />
 
         <div />
-        <div class="p-2 text-3xl">Buy everything now.</div>
+        <NuxtLink
+          to="/privacy"
+          class="group hover:bg-base-200 flex flex-col items-start justify-between p-5 transition-all hover:cursor-pointer"
+        >
+          <p class="text-content-300">
+            Pac-Man is the classic arcade game that has been enjoyed by generations of
+            players.
+          </p>
+          <div class="flex items-center gap-3">
+            <span class="font-semibold tracking-wide">See details</span>
+            <Icon
+              class="text-lg transition-all group-hover:scale-125"
+              name="svgs:r-diagonal-arrow"
+            />
+          </div>
+        </NuxtLink>
         <div />
 
         <div />
