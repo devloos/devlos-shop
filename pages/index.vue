@@ -48,16 +48,31 @@
     <div class="relative my-24">
       <div class="ds-shadow-inset-top h-36" />
       <div class="ds-shadow-inset-bottom h-36" />
-      <div class="ds-shadow-inset-left w-52" />
-      <div class="ds-shadow-inset-right w-52" />
+      <div class="ds-shadow-inset-left w-8 xl:w-30 2xl:w-52" />
+      <div class="ds-shadow-inset-right w-8 xl:w-30 2xl:w-52" />
 
-      <div class="*:ring-content-300/30 relative grid grid-cols-5 *:ring-[0.5px]">
-        <div v-for="i in 5" :key="i" class="h-36" />
-        <div v-for="i in 5" :key="i" class="h-12" />
+      <div class="*:ring-content-300/30 ds-grid *:ring-[0.5px]">
+        <div class="hidden h-36 xl:block" />
+        <div class="hidden h-36 md:block" />
+        <div class="hidden h-36 md:block" />
+        <div class="hidden h-36 md:block" />
+        <div class="h-36" />
 
-        <div />
-        <div class="p-5 text-6xl">Logitech Keyboard Mini</div>
-        <div class="col-span-2 row-span-2">
+        <div class="hidden h-12 xl:block" />
+        <div class="hidden h-12 md:block" />
+        <div class="hidden h-12 md:block" />
+        <div class="hidden h-12 md:block" />
+        <div class="h-12" />
+
+        <div class="hidden md:block" />
+        <div
+          class="p-5 text-3xl md:col-start-2 md:row-start-4 md:text-6xl xl:col-start-auto xl:row-start-auto"
+        >
+          Logitech Keyboard Mini
+        </div>
+        <div
+          class="md:col-span-2 md:col-start-2 md:row-start-3 xl:col-start-auto xl:row-span-2 xl:row-start-auto"
+        >
           <div class="ds-bg-dotted flex justify-center py-4">
             <NuxtImg
               src="/devlos-shop/products/logitech-keyboard-min.png"
@@ -67,14 +82,14 @@
             />
           </div>
         </div>
-        <div />
+        <div class="hidden md:block" />
 
-        <div />
+        <div class="hidden md:block" />
         <NuxtLink
           to="/privacy"
           class="group hover:bg-base-200 flex flex-col items-start justify-between p-5 transition-all hover:cursor-pointer"
         >
-          <p class="text-content-300">
+          <p class="text-content-300 pb-3">
             The same mechanical feel and extraordinary precision and performance in a
             minimalist, space-saving, form factor.
           </p>
@@ -86,10 +101,10 @@
             />
           </div>
         </NuxtLink>
-        <div />
+        <div class="hidden md:block" />
 
-        <div class="h-72" />
-        <div class="h-72">
+        <div class="hidden h-72 md:block" />
+        <div class="hidden h-72 xl:flex">
           <div class="ds-bg-dotted flex h-full w-full items-center justify-center">
             <NuxtImg
               src="/devlos-shop/products/lock.png"
@@ -101,14 +116,16 @@
         </div>
         <NuxtLink
           to="/privacy"
-          class="hover:bg-base-200 group flex h-72 flex-col items-end justify-between gap-3 p-5 transition-all hover:cursor-pointer"
+          class="hover:bg-base-200 group flex h-40 flex-col items-start justify-between gap-3 p-5 transition-all hover:cursor-pointer md:h-72"
         >
           <Icon
-            class="text-xl transition-all group-hover:scale-125"
+            class="self-end text-lg transition-all group-hover:scale-125 md:text-xl"
             name="svgs:r-diagonal-arrow"
           />
           <div>
-            <h3 class="pb-2 text-xl font-semibold tracking-wide">Quality Products</h3>
+            <h3 class="tx-lg pb-2 font-semibold tracking-wide md:text-xl">
+              Quality Products
+            </h3>
             <p class="text-content-300">
               Battle tested tech and built with security in mind
             </p>
@@ -124,12 +141,24 @@
             />
           </div>
         </div>
-        <div class="h-72" />
+        <div class="hidden h-72 md:block" />
 
-        <div v-for="i in 5" :key="i" class="h-12" />
+        <div class="hidden h-12 xl:block" />
+        <div class="hidden h-12 md:block" />
+        <div class="hidden h-12 md:block" />
+        <div class="hidden h-12 md:block" />
+        <div class="h-12" />
 
-        <div />
-        <div class="col-span-2 row-span-2">
+        <div class="hidden md:block" />
+        <div
+          class="p-5 text-3xl md:col-start-2 md:row-start-8 md:text-6xl xl:col-start-auto xl:row-start-auto"
+        >
+          Pac-Man Micro Player Pro
+        </div>
+
+        <div
+          class="md:col-span-2 md:col-start-2 md:row-start-7 xl:col-start-auto xl:row-span-2 xl:row-start-auto"
+        >
           <div class="ds-bg-dotted flex items-center justify-center py-4">
             <NuxtImg
               src="/devlos-shop/products/pacman.png"
@@ -139,15 +168,15 @@
             />
           </div>
         </div>
-        <div class="p-5 text-6xl">Pac-Man Micro Player Pro</div>
-        <div />
+
+        <div class="hidden md:block" />
 
         <div />
         <NuxtLink
           to="/privacy"
           class="group hover:bg-base-200 flex flex-col items-start justify-between p-5 transition-all hover:cursor-pointer"
         >
-          <p class="text-content-300">
+          <p class="text-content-300 pb-3">
             Pac-Man is the classic arcade game that has been enjoyed by generations of
             players.
           </p>
@@ -161,11 +190,11 @@
         </NuxtLink>
         <div />
 
-        <div />
+        <div class="hidden xl:block" />
         <div />
         <NuxtLink
           to="/privacy"
-          class="hover:bg-base-200 group flex h-14 items-center justify-center gap-3 transition-all hover:cursor-pointer"
+          class="hover:bg-base-200 group col-span-2 flex h-14 items-center justify-center gap-3 transition-all hover:cursor-pointer xl:col-span-1"
         >
           <span class="font-semibold tracking-wide">Shop Now</span>
           <Icon
@@ -174,9 +203,13 @@
           />
         </NuxtLink>
         <div />
-        <div />
+        <div class="hidden xl:block" />
 
-        <div v-for="i in 5" :key="i" class="h-36" />
+        <div class="hidden h-36 xl:block" />
+        <div class="hidden h-36 md:block" />
+        <div class="hidden h-36 md:block" />
+        <div class="hidden h-36 md:block" />
+        <div class="h-36" />
       </div>
     </div>
   </div>
@@ -279,5 +312,23 @@ h1 {
   background-repeat: repeat;
   background-position: center;
   background-size: 17px 17px;
+}
+
+.ds-grid {
+  --grid-width: min(calc(100vw - 30px * 2), 1065px);
+}
+
+@media (min-width: 768px) {
+  .ds-grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, calc(var(--grid-width) / 2)) 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ds-grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, calc(var(--grid-width) / 3)) 1fr;
+  }
 }
 </style>
