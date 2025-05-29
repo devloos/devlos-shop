@@ -52,17 +52,8 @@
       <div class="ds-shadow-inset-right w-8 xl:w-30 2xl:w-52" />
 
       <div class="*:ring-content-300/30 ds-grid *:ring-[0.5px]">
-        <div class="hidden h-36 xl:block" />
-        <div class="hidden h-36 md:block" />
-        <div class="hidden h-36 md:block" />
-        <div class="hidden h-36 md:block" />
-        <div class="h-36" />
-
-        <div class="hidden h-12 xl:block" />
-        <div class="hidden h-12 md:block" />
-        <div class="hidden h-12 md:block" />
-        <div class="hidden h-12 md:block" />
-        <div class="h-12" />
+        <HomeGridLargeSpacers />
+        <HomeGridSmallSpacers />
 
         <div class="hidden md:block" />
         <div
@@ -143,11 +134,7 @@
         </div>
         <div class="hidden h-72 md:block" />
 
-        <div class="hidden h-12 xl:block" />
-        <div class="hidden h-12 md:block" />
-        <div class="hidden h-12 md:block" />
-        <div class="hidden h-12 md:block" />
-        <div class="h-12" />
+        <HomeGridSmallSpacers />
 
         <div class="hidden md:block" />
         <div
@@ -157,7 +144,7 @@
         </div>
 
         <div
-          class="md:col-span-2 md:col-start-2 md:row-start-7 xl:col-start-auto xl:row-span-2 xl:row-start-auto"
+          class="md:col-span-2 md:col-start-2 md:row-start-7 xl:col-start-2 xl:row-span-2 xl:row-start-7"
         >
           <div class="ds-bg-dotted flex items-center justify-center py-4">
             <NuxtImg
@@ -205,11 +192,7 @@
         <div />
         <div class="hidden xl:block" />
 
-        <div class="hidden h-36 xl:block" />
-        <div class="hidden h-36 md:block" />
-        <div class="hidden h-36 md:block" />
-        <div class="hidden h-36 md:block" />
-        <div class="h-36" />
+        <HomeGridLargeSpacers />
       </div>
     </div>
   </div>
