@@ -26,14 +26,14 @@
     "eslint": "^9.28.0",
     "nuxt": "^3.17.5",
     "tailwindcss": "^4.1.8",
-    "three": "^0.176.0",
+    "three": "^0.177.0",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "^3.25.56"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript": "^5.8.3",
     "vue-tsc": "^2.2.10"
   },
