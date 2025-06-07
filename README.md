@@ -1,5 +1,14 @@
 # Devlos Shop
 
+- Stack: Nuxt, Supabase (DB, Auth), Nuxt UI, Vercel, Tailwindcss, CloudFlare, Zod, Stripe, ImageKit
+- Filters
+  - Pages e.g. Men, Hardware, Software, etc…
+  - Availability
+  - Price
+  - Item Condition
+  - Features
+  - Category
+
 Refer to the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more about Nuxt.
 
 ---
