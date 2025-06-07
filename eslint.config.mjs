@@ -6,4 +6,3 @@ export default withNuxt().override('nuxt/vue/rules', {
     'vue/html-self-closing': 'off',
   },
 });
-// Your custom configs here
