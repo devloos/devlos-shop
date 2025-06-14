@@ -4,16 +4,17 @@ const runtimeConfig = useRuntimeConfig();
 useSeoMeta({
   title: 'Devlos Shop',
   description: 'Shop unique and interesting tech at Devlos Shop',
+  ogUrl: runtimeConfig.public.baseUrl,
+  ogType: 'website',
   ogTitle: 'Devlos Shop',
   ogDescription: 'Shop unique and interesting tech at Devlos Shop',
-  ogImage: '/assets/logo-1280.png',
-  ogType: 'website',
-  ogUrl: runtimeConfig.public.baseUrl,
+  ogImage: '/assets/meta-logo.png',
   ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  twitterSite: runtimeConfig.public.baseUrl,
   twitterTitle: 'Devlos Shop',
   twitterDescription: 'Shop unique and interesting tech at Devlos Shop',
-  twitterImage: '/assets/logo-1280.png',
-  twitterCard: 'summary',
+  twitterImage: '/assets/meta-logo.png',
 });
 
 useHead({
@@ -23,7 +24,7 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'canonical', href: runtimeConfig.public.baseUrl },
-    { rel: 'apple-touch-icon', href: '/assets/logo-1280.png' },
+    { rel: 'apple-touch-icon', href: '/assets/logo-512.png' },
   ],
   script: [
     {
