@@ -13,20 +13,20 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/eslint": "^1.6.0",
+    "@nuxt/eslint": "^1.9.0",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.15.0",
-    "@nuxt/image": "^1.10.0",
-    "@nuxt/ui": "^3.2.0",
-    "@nuxtjs/supabase": "^1.5.3",
-    "@tailwindcss/vite": "^4.1.11",
+    "@nuxt/image": "^1.11.0",
+    "@nuxt/ui": "^3.3.3",
+    "@nuxtjs/supabase": "^1.6.1",
+    "@tailwindcss/vite": "^4.1.13",
     "@tresjs/cientos": "^4.3.1",
     "@tresjs/nuxt": "^4.0.0",
-    "@vueuse/nuxt": "^13.5.0",
-    "eslint": "^9.31.0",
+    "@vueuse/nuxt": "^13.9.0",
+    "eslint": "^9.35.0",
     "nuxt": "^3.17.5",
-    "tailwindcss": "^4.1.11",
-    "three": "^0.178.0",
+    "tailwindcss": "^4.1.13",
+    "three": "^0.180.0",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "^3.25.64"
@@ -34,8 +34,8 @@
   "devDependencies": {
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "typescript": "^5.8.3",
-    "vue-tsc": "^3.0.3"
+    "typescript": "^5.9.2",
+    "vue-tsc": "^3.0.6"
   },
   "overrides": {
     "cookie": "1.0.2"
