@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: 'svgs',
-        dir: './assets/svgs',
+        dir: './app/assets/svgs',
       },
     ],
   },
