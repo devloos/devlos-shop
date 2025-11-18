@@ -30,6 +30,9 @@ export default defineNuxtConfig({
   colorMode: {
     fallback: 'dark',
   },
+  fonts: {
+    families: [{ name: 'DM Sans', provider: 'google', weights: [400, 500, 600, 700] }],
+  },
   supabase: {
     redirectOptions: {
       login: '/login',
